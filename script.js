@@ -1,27 +1,18 @@
 function stringChop(str, size) {
-    let n=str.length
-      let temp=Math.floor(n/size)
-      let pin=0
-      if(n%size!=0){
-          temp++
-          pin=1
-      }
-      let ar=new Array(temp)
-      let fill=0
-      let tempstr=""
-      for(let i=0;i<n;i++){
-          tempstr+=str.charAt(i)
-          if((i+1)%size==0){
-              ar[fill]=tempstr
-              fill++
-              tempstr=""
-          }
-      }
-      if(pin==1){
-        ar[fill]=tempstr
-      }
-      return ar
-  }
+    // Step 1: Check if str is null or empty
+    if (!str) return [];
+
+    // Step 2: Check if size is a positive integer
+    if (size <= 0) return [];
+
+    let chunks = [];
+    for (let i = 0; i < str.length; i += size) {
+        // Step 3: Slice the string into chunks
+        chunks.push(str.slice(i, i + size));
+    }
+    return chunks;
+}
+
 
 // Do not change the code below
 const str = prompt("Enter String.");
