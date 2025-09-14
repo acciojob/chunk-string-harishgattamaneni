@@ -2,7 +2,7 @@ function stringChop(str, size) {
     let n=str.length
       let temp=Math.floor(n/size)
       let pin=0
-      if(n%size==0){
+      if(n%size!=0){
           temp++
           pin=1
       }
@@ -22,7 +22,6 @@ function stringChop(str, size) {
       }
       return ar
   }
-  
 
 // Do not change the code below
 const str = prompt("Enter String.");
