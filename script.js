@@ -1,6 +1,23 @@
 function stringChop(str, size) {
-  // your code here
-}
+    let n=str.length
+      let temp=Math.floor(n/size)
+      if(n%size==0){
+          temp++
+      }
+      let ar=new Array(temp)
+      let fill=0
+      let tempstr=""
+      for(let i=0;i<n;i++){
+          tempstr+=str.charAt(i)
+          if((i+1)%size==0){
+              ar[fill]=tempstr
+              fill++
+              tempstr=""
+          }
+      }
+      ar[fill]=tempstr
+      return ar
+  }
 
 // Do not change the code below
 const str = prompt("Enter String.");
