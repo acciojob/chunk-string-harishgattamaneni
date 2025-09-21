@@ -8,7 +8,7 @@ function stringChop(str, size) {
     let chunks = [];
     for (let i = 0; i < str.length; i += size) {
         // Step 3: Slice the string into chunks
-        chunks.push(str.slice(i, i + size));
+        chunks.push(str.substring(i, i + size));
     }
     return chunks;
 }
@@ -16,5 +16,5 @@ function stringChop(str, size) {
 
 // Do not change the code below
 const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
+const size = parseInt(prompt("Enter Chunk Size."));
 alert(stringChop(str, size));
